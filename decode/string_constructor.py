@@ -7,7 +7,13 @@ class StringConstructor:
     @staticmethod
     def construct_string_contents(*args: str) -> str:
         """Construct a string from the given arguments."""
-        return "\n\n".join(args)
+
+        final_string = ""
+        for arg in args:
+            arg = StringConstructor.remove_surrounding_newlines(arg)
+            final_string += arg + "\n\n"
+
+        return StringConstructor.remove_trailing_newlines(final_string)
 
     @staticmethod
     def remove_trailing_newlines(string: str) -> str:
