@@ -1,9 +1,3 @@
-The equations are:
-
-dx/dt = \sigma * (y - x)
-dy/dt = x * (\rho -x) - y
-dz/dt = x*y -\beta*z
-
 The function should be named ode_func.
 It should take three arguments: t, x, and p.
 The argument p should be a dict, x should be a list, and t should be a float.

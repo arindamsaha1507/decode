@@ -1,0 +1,6 @@
+
+
+dx/dt = \sigma * (y - x)
+dy/dt = x * (\rho -x) - y
+dz/dt = x*y -\beta*z
+
