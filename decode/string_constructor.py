@@ -31,3 +31,22 @@ class StringConstructor:
         return StringConstructor.remove_leading_newlines(
             StringConstructor.remove_trailing_newlines(string)
         )
+
+    @staticmethod
+    def find_substring(string: str, substr: str) -> int:
+        """Return the index of the first occurrence of the given substring in the given string."""
+        return string.find(substr)
+
+    @staticmethod
+    def trim_string(string: str, start: int, end: int) -> str:
+        """Return the given string trimmed from the given start and end indices."""
+        return string[start:end]
+
+    @staticmethod
+    def trim_between_substrings(string: str, start: str, end: str) -> str:
+        """Return the given string trimmed between the given start and end substrings."""
+        return StringConstructor.trim_string(
+            string,
+            StringConstructor.find_substring(string, start) + len(start),
+            StringConstructor.find_substring(string, end),
+        )

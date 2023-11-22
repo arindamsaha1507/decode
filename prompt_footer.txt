@@ -2,3 +2,6 @@ The function should be named ode_func.
 It should take three arguments: t, x, and p.
 The argument p should be a dict, x should be a list, and t should be a float.
 Add one line docstrings and typehints.
+Assume Python 3.12.
+Make it independent of numpy and typing module.
+Wrap the function in a code block.
