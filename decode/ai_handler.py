@@ -11,7 +11,7 @@ class AIHandler:
 
     settings_file_path: os.PathLike
     prompt_file_path: os.PathLike
-    model: str = "gpt-3.5-turbo"
+    model: str = "gpt-4"
     settings: str = field(init=False)
     prompt: str = field(init=False)
     client: OpenAI = field(init=False)

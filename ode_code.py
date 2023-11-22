@@ -3,24 +3,11 @@
 # pylint: disable=unused-argument
 
 
-def ode_func(t: float, x: list[float], p: dict[str, float]) -> list[float]:
+def ode_func(t: float, x: list, p: dict) -> list:
     """
-    Compute the derivatives of the ODE system at time t.
-
-    Parameters:
-        t (float): The current time.
-        x (list[float]): The current state vector.
-        p (dict[str, float]): The parameter values for the ODE system.
-
-    Returns:
-        list[float]: The derivatives of the state variables at time t.
+    Evaluates the system of ODEs at time t and state x with parameters p.
     """
-    sigma = p["sigma"]
-    rho = p["rho"]
-    beta = p["beta"]
-
-    dxdt = sigma * (x[1] - x[0])
-    dydt = x[0] * (rho - x[0]) - x[1]
-    dzdt = x[0] * x[1] - beta * x[2]
-
+    dxdt = p["sigma"] * (x[1] - x[0])
+    dydt = x[0] * (p["rho"] - x[0]) - x[1]
+    dzdt = x[0] * x[1] - p["beta"] * x[2]
     return [dxdt, dydt, dzdt]
